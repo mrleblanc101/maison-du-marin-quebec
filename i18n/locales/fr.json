@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp (lien à compléter)"
+  },
+  "hero": {
+    "kicker": "Quai 26 · Port de Québec",
+    "title": "Maison du Marin",
+    "subtitle": "Où se rassemblent les marins du monde entier.",
+    "p1": "Au cœur des installations portuaires, la Maison du Marin est un lieu chaleureux conçu pour accueillir tous les marins en escale au Port de Québec. Ouverte 365 jours par année, animée par des bénévoles dévoués.",
+    "p2": "Que votre escale soit brève ou prolongée, c'est votre havre de bien-être à terre. Au plaisir de vous accueillir."
+  },
+  "info": {
+    "address": { "label": "Adresse", "lines": ["Quai 26, Port de Québec", "CP 80, Succ. Haute-Ville", "Québec (QC) G1R 4M8"] },
+    "hours": { "label": "Horaires", "line1": "Ouvert 365 jours par année.", "text": "Horaire détaillé sur la {link}.", "linkText": "page Facebook" },
+    "volunteering": { "label": "Bénévolat", "text": "Intéressé à donner de votre temps?" }
+  },
+  "photoCaption": "Une porte ouverte à quelques pas du quai, quelle que soit l'heure d'arrivée.",
+  "services": {
+    "kicker": "Services offerts",
+    "title": "Services offerts",
+    "subtitle": "Gratuits, sur place, pour tous les équipages en escale.",
+    "items": [
+      { "title": "Espace communautaire", "text": "Un salon avec billard, piano et fauteuils, pour se détendre et rencontrer d'autres équipages." },
+      { "title": "Cabine Wi-Fi", "text": "Une cabine dédiée pour un appel privé et une connexion fiable à tout moment." },
+      { "title": "Dépanneur", "text": "L'essentiel du quotidien, sans quitter le territoire portuaire." },
+      { "title": "Comptoir de vêtements", "text": "Des morceaux adaptés au climat parfois rigoureux qui vous attend à terre." }
+    ]
+  },
+  "mission": {
+    "kicker": "Notre mission",
+    "title": "Bien plus qu'une simple pause",
+    "p1": "Organisme à but non lucratif, la Maison du Marin répond aux besoins physiques, émotionnels et spirituels de tous les acteurs du Port. L'objectif : offrir un environnement accueillant qui fait office de véritable chez-soi.",
+    "p2": "Membres d'équipage, partenaires commerciaux ou visiteurs — tous y sont chaleureusement accueillis. C'est une communauté portuaire où chacun se sent intégré et soutenu."
+  },
+  "shuttle": {
+    "kicker": "Service de transport",
+    "title": "La navette qui vous sort du quai",
+    "p1": "Le territoire portuaire n'est pas fait pour les piétons. La navette de la Maison du Marin, conduite par nos bénévoles, vous emmène du navire à la Maison du Marin et vers la ville : épicerie, pharmacie, commerces et Vieux-Québec.",
+    "p2": "Réservez à l'accueil ou par téléphone au {phone}. Les disponibilités varient selon les bénévoles en service."
+  },
+  "donation": {
+    "kicker": "Soutenir la Maison du Marin",
+    "title": "Faire un don",
+    "p1": "La Maison du Marin prospère grâce à la générosité de ses donateurs, de ses bénévoles et de partenaires engagés.",
+    "p2": "Chaque don soutient directement les activités et l'accueil des équipages.",
+    "onsite": { "label": "Sur place", "text": "Boîte de dons à l'accueil de la Maison du Marin, quai 26." },
+    "mail": { "label": "Par la poste", "lines": ["Chèque libellé à la Maison du Marin", "Quai 26, Port de Québec, CP 80, Succ. Haute-Ville, Québec (QC) G1R 4M8"] },
+    "phone": { "label": "Nous parler", "text": "— dons majeurs, commandites et partenariats." }
+  },
+  "gallery": {
+    "kicker": "En images",
+    "title": "Les bateaux en visite",
+    "item": "Publication"
+  },
+  "thanks": {
+    "label": "Remerciements",
+    "text": "Merci au {port} et à la {cpbsl} pour leur soutien fidèle à la Maison du Marin.",
+    "port": "Port de Québec",
+    "cpbsl": "Corporation des pilotes du Bas Saint-Laurent"
+  },
+  "footer": {
+    "copyright": "© La Maison du Marin Québec"
+  },
+  "common": {
+    "phone": "418 692-3376"
+  }
+}

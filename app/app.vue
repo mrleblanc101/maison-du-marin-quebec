@@ -1,6 +1,31 @@
+<script setup lang="ts">
+useHead({
+  htmlAttrs: { lang: 'fr' }
+})
+</script>
+
 <template>
-  <div>
+  <div class="page">
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <SiteHeader />
+    <HeroSection />
+    <InfoStrip />
+    <PhotoBanner />
+    <ServicesSection />
+    <MissionSection />
+    <ShuttleSection />
+    <DonationSection />
+    <ShipsMarquee />
+    <ThanksSection />
+    <SiteFooter />
   </div>
 </template>
+
+<style scoped>
+.page {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  min-height: 100%;
+}
+</style>
