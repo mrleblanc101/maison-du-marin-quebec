@@ -1,31 +1,11 @@
 <script setup lang="ts">
+const { locale } = useI18n()
+
 useHead({
-    htmlAttrs: { lang: 'fr' },
+    htmlAttrs: { lang: computed(() => locale.value) },
 })
 </script>
 
 <template>
-    <div class="page">
-        <NuxtRouteAnnouncer />
-        <SiteHeader />
-        <HeroSection />
-        <InfoStrip />
-        <PhotoBanner />
-        <ServicesSection />
-        <MissionSection />
-        <ShuttleSection />
-        <DonationSection />
-        <ShipsMarquee />
-        <ThanksSection />
-        <SiteFooter />
-    </div>
+    <NuxtPage />
 </template>
-
-<style scoped>
-.page {
-    font-family: var(--font-sans);
-    color: var(--color-ink);
-    background: var(--color-bg);
-    min-height: 100%;
-}
-</style>

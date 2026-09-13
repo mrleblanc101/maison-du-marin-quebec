@@ -1,49 +1,47 @@
 <script setup lang="ts">
-const { locale, setLocale } = useI18n()
+const { locale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const otherLocale = computed(() => (locale.value === 'fr' ? 'en' : 'fr'))
 </script>
 
 <template>
     <div class="lang-switch">
-        <button
-            type="button"
+        <NuxtLink
+            :to="switchLocalePath(otherLocale)"
             class="lang-switch__mobile-btn"
-            @click="setLocale(otherLocale)"
         >
             {{ otherLocale.toUpperCase() }}
-        </button>
+        </NuxtLink>
         <div class="lang-switch__toggle">
-            <button
-                type="button"
+            <NuxtLink
+                :to="switchLocalePath('fr')"
                 class="lang-switch__btn"
                 :class="{ 'lang-switch__btn--active': locale === 'fr' }"
-                @click="setLocale('fr')"
             >
                 FR
-            </button>
-            <button
-                type="button"
+            </NuxtLink>
+            <NuxtLink
+                :to="switchLocalePath('en')"
                 class="lang-switch__btn"
                 :class="{ 'lang-switch__btn--active': locale === 'en' }"
-                @click="setLocale('en')"
             >
                 EN
-            </button>
+            </NuxtLink>
         </div>
     </div>
 </template>
 
 <style scoped>
 .lang-switch__mobile-btn {
+    display: inline-block;
     font: inherit;
     font-size: 12.5px;
     font-weight: 600;
     letter-spacing: 0.08em;
     padding: 8px 14px;
     border-radius: 999px;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
     background: var(--color-border-soft);
     color: var(--color-slate);
     transition:
@@ -75,14 +73,14 @@ const otherLocale = computed(() => (locale.value === 'fr' ? 'en' : 'fr'))
 }
 
 .lang-switch__btn {
+    display: inline-block;
     font: inherit;
     font-size: 12.5px;
     font-weight: 600;
     letter-spacing: 0.08em;
     padding: 5px 13px;
     border-radius: 999px;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
     background: transparent;
     color: var(--color-slate);
     transition:
