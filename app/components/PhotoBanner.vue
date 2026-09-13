@@ -17,7 +17,7 @@ const { t } = useI18n()
 
 <style scoped>
 .photo-banner {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 56px 24px 0;
 }

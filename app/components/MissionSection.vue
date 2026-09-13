@@ -29,7 +29,7 @@ const { t } = useI18n()
 
 <style scoped>
 .mission {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 60px 24px 0;
     display: grid;

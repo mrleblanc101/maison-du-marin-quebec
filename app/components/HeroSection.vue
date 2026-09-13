@@ -5,10 +5,10 @@ const { t } = useI18n()
 <template>
     <div class="hero">
         <ImagePlaceholder
+            class="hero__image"
             src="/images/hero.png"
             alt="La Maison du Marin, quai 26"
         />
-        <div class="hero__scrim" />
         <div class="hero__content-wrap">
             <div class="hero__content">
                 <div class="hero__surtitle">
@@ -33,43 +33,59 @@ const { t } = useI18n()
 .hero {
     position: relative;
     width: 100%;
-    min-height: 420px;
+    min-height: 60vh;
     overflow: hidden;
     background: var(--color-navy);
     display: flex;
-    align-items: center;
-    /* Distance from the hero's edge to hero__content's left edge (it's
-     centered with a 1120px max-width) — the scrim's gradient is anchored
-     to this so it always lines up with the content, not the section. */
-    --hero-content-start: max(0px, (100vw - 1120px) / 2);
 }
 
-.hero__scrim {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-        95deg,
-        rgba(6, 28, 41, 0.94) 0,
-        rgba(6, 28, 41, 0.94) var(--hero-content-start),
-        rgba(6, 28, 41, 0.9) calc(var(--hero-content-start) + 560px),
-        rgba(6, 28, 41, 0.8) calc(var(--hero-content-start) + 700px),
-        rgba(6, 28, 41, 0.34) calc(var(--hero-content-start) + 1100px),
-        rgba(6, 28, 41, 0.1) 100%
-    );
+.hero__image :deep(img) {
+    object-position: 80% 90%;
 }
 
 .hero__content-wrap {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    max-width: var(--content-width);
+    margin: 0 auto;
     width: 100%;
-    min-width: 0;
-    max-width: 100%;
+    padding: 80px 24px;
+    z-index: 0;
+}
+
+.hero__content-wrap::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: calc((100vw - var(--content-width)) / 2);
+    pointer-events: none;
+    background: rgba(6, 28, 41, 0.85);
+}
+
+.hero__content-wrap::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    max-width: var(--content-width);
+    width: 120%;
+    background: linear-gradient(
+        90deg,
+        rgba(6, 28, 41, 0.85) 0%,
+        rgba(6, 28, 41, 0.82) 43.75%,
+        rgba(6, 28, 41, 0.72) 54.6875%,
+        rgba(6, 28, 41, 0.3) 85.9375%,
+        rgba(6, 28, 41, 0.0) 100%
+    );
 }
 
 .hero__content {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 80px 24px;
+    margin: auto 0;
 }
 
 .hero__content > * {

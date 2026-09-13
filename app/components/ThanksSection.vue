@@ -34,7 +34,7 @@ const { t } = useI18n()
 
 <style scoped>
 .thanks-wrap {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 56px auto 0;
     padding: 0 24px;
 }

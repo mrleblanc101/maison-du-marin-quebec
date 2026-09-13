@@ -13,6 +13,8 @@
 
     --font-serif: 'Newsreader', Georgia, serif;
     --font-sans: 'Public Sans', system-ui, sans-serif;
+
+    --content-width: 1440px;
 }
 
 *,

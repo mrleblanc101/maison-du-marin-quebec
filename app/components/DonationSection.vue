@@ -80,7 +80,7 @@ const { t, tm, rt } = useI18n()
 
 <style scoped>
 .donation-wrap {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 60px auto 0;
     padding: 0 24px;
 }

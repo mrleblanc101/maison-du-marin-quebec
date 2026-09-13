@@ -57,7 +57,7 @@ const modules = [Autoplay, FreeMode]
 
 <style scoped>
 .gallery {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 60px 24px 0;
 }
@@ -121,6 +121,7 @@ const modules = [Autoplay, FreeMode]
     border-radius: 4px;
     -webkit-user-select: none;
     user-select: none;
+    margin-right: 12px;
 }
 
 .gallery__swiper :deep(img) {

@@ -18,7 +18,7 @@ const { t } = useI18n()
 
 <style scoped>
 .footer {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 44px 24px 56px;
     display: flex;

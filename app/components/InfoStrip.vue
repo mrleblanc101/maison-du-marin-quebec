@@ -48,7 +48,7 @@ const { t, tm, rt } = useI18n()
 
 <style scoped>
 .info-strip-wrap {
-    max-width: 1120px;
+    max-width: var(--content-width);
     margin: 0 auto;
     padding: 40px 24px 0;
 }
