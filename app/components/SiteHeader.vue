@@ -37,7 +37,7 @@ const { t } = useI18n()
     align-items: start;
     gap: 8px 12px;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     filter: drop-shadow(0 1px 0 var(--color-border))
         drop-shadow(0 2px 10px rgba(14, 51, 72, 0.07));
