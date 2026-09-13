@@ -1,5 +1,5 @@
 <script setup lang="ts">
-withDefaults(
+const props = withDefaults(
     defineProps<{
         src?: string
         alt?: string
@@ -15,6 +15,16 @@ withDefaults(
     }>(),
     { radius: 0, fit: 'fill' },
 )
+
+// Static `src="/images/..."` attributes get the app.baseURL prefix rewritten
+// in automatically at build time, but this binds `src` dynamically, so the
+// prefix has to be applied by hand.
+const config = useRuntimeConfig()
+const resolvedSrc = computed(() => {
+    if (!props.src) return undefined
+    const base = config.app.baseURL.replace(/\/$/, '')
+    return `${base}${props.src}`
+})
 </script>
 
 <template>
@@ -23,7 +33,7 @@ withDefaults(
         :class="`image-placeholder--${fit}`"
         :style="{ borderRadius: `${radius}px` }"
     >
-        <img v-if="src" :src="src" :alt="alt || ''" loading="lazy" />
+        <img v-if="resolvedSrc" :src="resolvedSrc" :alt="alt || ''" loading="lazy" />
         <span v-else-if="label" class="image-placeholder__label">{{
             label
         }}</span>
