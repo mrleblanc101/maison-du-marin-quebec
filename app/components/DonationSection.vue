@@ -5,7 +5,7 @@ const { t, tm, rt } = useI18n()
 <template>
     <div id="donation" class="donation-wrap">
         <div class="donation">
-            <div>
+            <div class="donation__intro">
                 <div class="donation__surtitle">
                     {{ t('donation.surtitle') }}
                 </div>
@@ -14,6 +14,22 @@ const { t, tm, rt } = useI18n()
                 <p class="donation__paragraph donation__paragraph--last">
                     {{ t('donation.p2') }}
                 </p>
+                <div class="donation__card">
+                    <div class="donation__card-label">
+                        {{ t('donation.phone.label') }}
+                    </div>
+                    <i18n-t
+                        keypath="donation.phone.text"
+                        tag="div"
+                        class="donation__card-text"
+                    >
+                        <template #phone>
+                            <a href="tel:4186923376" class="donation__phone-link"
+                                >{{ t('common.phone') }}</a
+                            >
+                        </template>
+                    </i18n-t>
+                </div>
             </div>
             <div class="donation__cards">
                 <div class="donation__card">
@@ -42,14 +58,20 @@ const { t, tm, rt } = useI18n()
                 </div>
                 <div class="donation__card">
                     <div class="donation__card-label">
-                        {{ t('donation.phone.label') }}
+                        {{ t('donation.online.label') }}
                     </div>
                     <div class="donation__card-text">
-                        <a href="tel:4186923376" class="donation__phone-link">{{
-                            t('common.phone')
-                        }}</a>
-                        {{ t('donation.phone.text') }}
+                        {{ t('donation.online.text') }}
                     </div>
+                    <a
+                        :href="t('donation.online.href')"
+                        target="_blank"
+                        rel="noopener"
+                        class="donation__online-btn"
+                    >
+                    {{ t('donation.online.cta') }}
+                    <Icon name="lucide:external-link" class="donation__online-icon" />
+                    </a>
                 </div>
             </div>
         </div>
@@ -111,6 +133,25 @@ const { t, tm, rt } = useI18n()
     margin-bottom: 0;
 }
 
+.donation__intro .donation__card {
+    background: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.donation__intro .donation__card-label {
+    color: #bfe4f7;
+}
+
+.donation__intro .donation__card-text {
+    color: #ffffff;
+}
+
+.donation__intro .donation__phone-link {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
 .donation__cards {
     display: flex;
     flex-direction: column;
@@ -143,6 +184,33 @@ const { t, tm, rt } = useI18n()
     text-decoration: none;
     border-bottom: 1px solid #9fcfe8;
 }
+
+.donation__online-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--color-blue);
+    padding: 8px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 140ms ease;
+}
+
+.donation__online-btn:hover {
+    background: var(--color-navy);
+    color: #ffffff;
+}
+
+.donation__online-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
 </style>
 
 <i18n lang="json">
@@ -153,6 +221,12 @@ const { t, tm, rt } = useI18n()
             "title": "Faire un don",
             "p1": "La Maison du Marin prospère grâce à la générosité de ses donateurs, de ses bénévoles et de partenaires engagés.",
             "p2": "Chaque don soutient directement les activités et l'accueil des équipages.",
+            "online": {
+                "label": "En ligne",
+                "text": "Faites un don sécurisé en quelques clics grâce à CanaDon.",
+                "cta": "Faire un don en ligne",
+                "href": "https://www.canadahelps.org/fr/organismesdebienfaisance/la-maison-du-marin-de-quebec-quebec-seamens-institute/"
+            },
             "onsite": {
                 "label": "Sur place",
                 "text": "Boîte de dons à l'accueil de la Maison du Marin, quai 26."
@@ -166,7 +240,7 @@ const { t, tm, rt } = useI18n()
             },
             "phone": {
                 "label": "Nous parler",
-                "text": "— dons majeurs, commandites et partenariats."
+                "text": "Pour les dons majeurs, dons de vêtements, commandites et partenariats, contactez-nous au {phone}."
             }
         },
         "common": { "phone": "418 692-3376" }
@@ -177,6 +251,12 @@ const { t, tm, rt } = useI18n()
             "title": "Make a donation",
             "p1": "The Seamen's Club thrives on the generosity of its donors, volunteers and committed partners.",
             "p2": "Every gift directly supports its activities and the welcome extended to crews.",
+            "online": {
+                "label": "Online",
+                "text": "Give securely in just a few clicks through CanadaHelps.",
+                "cta": "Donate online",
+                "href": "https://www.canadahelps.org/en/charities/la-maison-du-marin-de-quebec-quebec-seamens-institute/"
+            },
             "onsite": {
                 "label": "On site",
                 "text": "Donation box at the Seamen's Club front desk, Pier 26."
@@ -190,7 +270,7 @@ const { t, tm, rt } = useI18n()
             },
             "phone": {
                 "label": "Talk to us",
-                "text": "— major gifts, sponsorships and partnerships."
+                "text": "For major gifts, clothing donations, sponsorships and partnerships, contact us at {phone}."
             }
         },
         "common": { "phone": "418 692-3376" }
