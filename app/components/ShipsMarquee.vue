@@ -32,8 +32,17 @@ const modules = [Autoplay, FreeMode]
         :speed="5000"
         :autoplay="{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }"
       >
-        <SwiperSlide v-for="n in [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]" :key="n" class="gallery__tile">
-          <ImagePlaceholder :label="`${t('gallery.item')} ${n}`" :radius="4" />
+        <SwiperSlide
+          v-for="(n, i) in [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]"
+          :key="i"
+          class="gallery__tile"
+        >
+          <ImagePlaceholder
+            :src="`/images/marquee/bateau-${n}.webp`"
+            :alt="`${t('gallery.item')} ${n}`"
+            :radius="4"
+            fit="natural"
+          />
         </SwiperSlide>
       </Swiper>
     </div>
@@ -99,8 +108,9 @@ const modules = [Autoplay, FreeMode]
 
 .gallery__tile {
   position: relative;
-  width: 300px;
   height: 300px;
+  width: auto;
+  flex-shrink: 0;
   overflow: hidden;
   border-radius: 4px;
   -webkit-user-select: none;

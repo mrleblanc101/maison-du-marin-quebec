@@ -5,13 +5,24 @@ withDefaults(
     alt?: string
     label?: string
     radius?: number
+    /**
+     * 'fill' (default): absolutely fills a positioned, pre-sized parent, cropping
+     * the image to match (used inside aspect-ratio boxes).
+     * 'natural': sits in normal flow at its own height, width following the
+     * image's intrinsic aspect ratio — no cropping, no ratio bookkeeping needed.
+     */
+    fit?: 'fill' | 'natural'
   }>(),
-  { radius: 0 }
+  { radius: 0, fit: 'fill' }
 )
 </script>
 
 <template>
-  <div class="image-placeholder" :style="{ borderRadius: `${radius}px` }">
+  <div
+    class="image-placeholder"
+    :class="`image-placeholder--${fit}`"
+    :style="{ borderRadius: `${radius}px` }"
+  >
     <img v-if="src" :src="src" :alt="alt || ''" loading="lazy">
     <span v-else-if="label" class="image-placeholder__label">{{ label }}</span>
   </div>
@@ -19,8 +30,6 @@ withDefaults(
 
 <style scoped>
 .image-placeholder {
-  position: absolute;
-  inset: 0;
   overflow: hidden;
   background:
     repeating-linear-gradient(
@@ -36,11 +45,27 @@ withDefaults(
   justify-content: center;
 }
 
-.image-placeholder img {
+.image-placeholder--fill {
+  position: absolute;
+  inset: 0;
+}
+
+.image-placeholder--natural {
+  height: 100%;
+  width: max-content;
+}
+
+.image-placeholder--fill img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 90%;
+  display: block;
+}
+
+.image-placeholder--natural img {
+  height: 100%;
+  width: auto;
   display: block;
 }
 
