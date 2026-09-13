@@ -137,7 +137,7 @@ const { t } = useI18n()
     },
     "en": {
         "cta": {
-            "label": { "mobile": "Transport", "desktop": "Request a ride" },
+            "label": { "mobile": "Transport", "desktop": "Request transport" },
             "href": "#shuttle",
             "icon": "lucide:car-taxi-front"
         }
