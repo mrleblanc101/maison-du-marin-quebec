@@ -32,9 +32,10 @@ export default defineNuxtConfig({
     ],
 
     i18n: {
+        baseUrl: 'https://mrleblanc101.github.io',
         locales: [
-            { code: 'fr', name: 'Français' },
-            { code: 'en', name: 'English' },
+            { code: 'fr', language: 'fr-CA', name: 'Français' },
+            { code: 'en', language: 'en-CA', name: 'English' },
         ],
         defaultLocale: 'fr',
         strategy: 'prefix_except_default',

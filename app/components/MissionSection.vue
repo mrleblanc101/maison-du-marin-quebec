@@ -6,7 +6,7 @@ const { t } = useI18n()
     <div class="mission">
         <div class="mission__photo">
             <ImagePlaceholder
-                src="/images/mission.png"
+                src="/images/mission.jpg"
                 alt="Équipage et bénévoles de la Maison du Marin"
                 :radius="4"
             />

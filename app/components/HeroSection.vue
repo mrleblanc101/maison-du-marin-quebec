@@ -6,7 +6,7 @@ const { t } = useI18n()
     <div class="hero">
         <ImagePlaceholder
             class="hero__image"
-            src="/images/hero.png"
+            src="/images/hero.jpg"
             alt="La Maison du Marin, quai 26"
         />
         <div class="hero__content-wrap">
