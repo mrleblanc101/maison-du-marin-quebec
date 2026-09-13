@@ -4,7 +4,7 @@ const { t } = useI18n()
 
 <template>
   <div class="hero">
-    <ImagePlaceholder :label="'Photo — Maison du Marin, quai 26'" />
+    <ImagePlaceholder src="/images/hero.png" alt="La Maison du Marin, quai 26" />
     <div class="hero__scrim" />
     <div class="hero__content-wrap">
       <div class="hero__content">

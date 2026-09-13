@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <div class="mission">
     <div class="mission__photo">
-      <ImagePlaceholder label="Photo — équipage, bénévoles, salle commune" :radius="4" />
+      <ImagePlaceholder src="/images/mission.png" alt="Équipage et bénévoles de la Maison du Marin" :radius="4" />
     </div>
     <div>
       <div class="mission__kicker">

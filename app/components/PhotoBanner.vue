@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <div class="photo-banner">
     <div class="photo-banner__frame">
-      <ImagePlaceholder label="Photo — salle commune" :radius="4" />
+      <ImagePlaceholder src="/images/salon.jpg" alt="Salle commune de la Maison du Marin" :radius="4" />
     </div>
     <p class="photo-banner__caption">{{ t('photoCaption') }}</p>
   </div>

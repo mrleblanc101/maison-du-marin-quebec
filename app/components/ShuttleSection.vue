@@ -18,7 +18,7 @@ const { t } = useI18n()
       </i18n-t>
     </div>
     <div class="shuttle__photo">
-      <ImagePlaceholder label="Photo — la navette de la Maison du Marin" :radius="4" />
+      <ImagePlaceholder src="/images/transport.jpg" alt="La navette de la Maison du Marin" :radius="4" />
     </div>
   </div>
 </template>
