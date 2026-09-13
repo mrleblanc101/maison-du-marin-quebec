@@ -62,7 +62,7 @@ const headerVisible = useHeadroom()
     filter: drop-shadow(0 1px 0 var(--color-border))
         drop-shadow(0 2px 10px rgba(14, 51, 72, 0.07));
     background-color: var(--color-bg);
-    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 320ms ease;
     will-change: transform;
     backface-visibility: hidden;
 }
