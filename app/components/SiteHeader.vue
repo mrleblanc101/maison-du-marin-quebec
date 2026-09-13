@@ -1,9 +1,10 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const headerVisible = useHeadroom()
 </script>
 
 <template>
-    <div class="site-header">
+    <div class="site-header" :class="{ 'site-header--hidden': !headerVisible }">
         <div class="site-header__logo-wrap">
             <div class="site-header__logo-bg" />
             <img
@@ -42,13 +43,24 @@ const { t } = useI18n()
     filter: drop-shadow(0 1px 0 var(--color-border))
         drop-shadow(0 2px 10px rgba(14, 51, 72, 0.07));
     background-color: var(--color-bg);
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-header--hidden {
+    transform: translateY(-90px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header {
+        transition: none;
+    }
 }
 
 .site-header__logo-wrap {
     clip-path: polygon(0 0, 100% 0, calc(100% - 82px) 100%, 0 100%);
     padding: 10px 96px 10px 16px;
     flex: 0 1 auto;
-    margin-bottom: -100px;
+    margin-bottom: -36px;
     margin-right: -96px;
     background-color: var(--color-bg);
 }
