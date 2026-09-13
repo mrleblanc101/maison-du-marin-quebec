@@ -270,7 +270,7 @@ const { t, tm, rt } = useI18n()
             },
             "phone": {
                 "label": "Talk to us",
-                "text": "For major gifts, clothing donations, sponsorships and partnerships, contact us at {phone}."
+                "text": "For major donation, clothing donations, sponsorships and partnerships, contact us at {phone}."
             }
         },
         "common": { "phone": "418 692-3376" }
