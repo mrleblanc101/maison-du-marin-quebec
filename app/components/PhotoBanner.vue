@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-    <div class="photo-banner">
+    <div v-reveal class="photo-banner">
         <div class="photo-banner__frame">
             <ImagePlaceholder
                 src="/images/salon.jpg"

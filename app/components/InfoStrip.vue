@@ -3,43 +3,53 @@ const { t, tm, rt } = useI18n()
 </script>
 
 <template>
-    <div class="info-strip-wrap">
+    <div v-reveal class="info-strip-wrap">
         <div class="info-strip">
             <div class="info-strip__cell">
-                <div class="info-strip__label">
-                    {{ t('info.address.label') }}
-                </div>
-                <div class="info-strip__text">
-                    <template
-                        v-for="(line, i) in tm('info.address.lines')"
-                        :key="i"
-                    >
-                        {{ rt(line)
-                        }}<br v-if="i < tm('info.address.lines').length - 1" />
-                    </template>
-                </div>
-            </div>
-            <div class="info-strip__cell">
-                <div class="info-strip__label">{{ t('info.hours.label') }}</div>
-                <div class="info-strip__text">
-                    {{ t('info.hours.line1') }}<br />
-                    <i18n-t keypath="info.hours.text" tag="span">
-                        <template #link>
-                            <a
-                                href="https://www.facebook.com/maisondumarinquebec/"
-                                >{{ t('info.hours.linkText') }}</a
-                            >
+                <div v-reveal="{ delay: 0 }">
+                    <div class="info-strip__label">
+                        {{ t('info.address.label') }}
+                    </div>
+                    <div class="info-strip__text">
+                        <template
+                            v-for="(line, i) in tm('info.address.lines')"
+                            :key="i"
+                        >
+                            {{ rt(line)
+                            }}<br
+                                v-if="i < tm('info.address.lines').length - 1"
+                            />
                         </template>
-                    </i18n-t>
+                    </div>
                 </div>
             </div>
             <div class="info-strip__cell">
-                <div class="info-strip__label">
-                    {{ t('info.volunteering.label') }}
+                <div v-reveal="{ delay: 120 }">
+                    <div class="info-strip__label">
+                        {{ t('info.hours.label') }}
+                    </div>
+                    <div class="info-strip__text">
+                        {{ t('info.hours.line1') }}<br />
+                        <i18n-t keypath="info.hours.text" tag="span">
+                            <template #link>
+                                <a
+                                    href="https://www.facebook.com/maisondumarinquebec/"
+                                    >{{ t('info.hours.linkText') }}</a
+                                >
+                            </template>
+                        </i18n-t>
+                    </div>
                 </div>
-                <div class="info-strip__text">
-                    {{ t('info.volunteering.text') }}<br />
-                    <a href="tel:4186923376">{{ t('common.phone') }}</a>
+            </div>
+            <div class="info-strip__cell">
+                <div v-reveal="{ delay: 240 }">
+                    <div class="info-strip__label">
+                        {{ t('info.volunteering.label') }}
+                    </div>
+                    <div class="info-strip__text">
+                        {{ t('info.volunteering.text') }}<br />
+                        <a href="tel:4186923376">{{ t('common.phone') }}</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,8 +66,6 @@ const { t, tm, rt } = useI18n()
 .info-strip {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1px;
-    background: var(--color-border);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
 }
@@ -65,6 +73,11 @@ const { t, tm, rt } = useI18n()
 .info-strip__cell {
     background: var(--color-bg);
     padding: 24px 22px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.info-strip__cell:last-child {
+    border-bottom: none;
 }
 
 .info-strip__label {
@@ -85,6 +98,15 @@ const { t, tm, rt } = useI18n()
 @media (min-width: 768px) {
     .info-strip {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-strip__cell {
+        border-bottom: none;
+        border-right: 1px solid var(--color-border);
+    }
+
+    .info-strip__cell:last-child {
+        border-right: none;
     }
 }
 </style>

@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-    <div id="shuttle" class="shuttle">
+    <div id="shuttle" v-reveal class="shuttle">
         <div>
             <div class="shuttle__surtitle">
                 <span class="shuttle__surtitle-rule" />

@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-    <div class="thanks-wrap">
+    <div v-reveal class="thanks-wrap">
         <div class="thanks">
             <div>
                 <div class="thanks__label">{{ t('thanks.label') }}</div>
@@ -18,14 +18,14 @@ const { t } = useI18n()
             </div>
             <div class="thanks__logos">
                 <img
-                    src="/images/port-quebec.svg"
-                    alt="Port de Québec"
-                    class="thanks__logo thanks__logo--port"
-                />
-                <img
                     src="/images/cpbsl.png"
                     alt="Corporation des pilotes du Bas Saint-Laurent"
                     class="thanks__logo thanks__logo--cpbsl"
+                />
+                <img
+                    src="/images/port-quebec.svg"
+                    alt="Port de Québec"
+                    class="thanks__logo thanks__logo--port"
                 />
             </div>
         </div>

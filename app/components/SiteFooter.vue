@@ -3,7 +3,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-    <div class="footer">
+    <div v-reveal class="footer">
         <img
             src="/images/mdm-vertical.svg"
             alt="La Maison du Marin Québec — Seamen's Club"

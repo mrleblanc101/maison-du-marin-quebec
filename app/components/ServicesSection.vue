@@ -3,13 +3,14 @@ const { t, tm, rt } = useI18n()
 </script>
 
 <template>
-    <div class="services">
+    <div v-reveal class="services">
         <h2 class="services__title">{{ t('services.title') }}</h2>
         <p class="services__subtitle">{{ t('services.subtitle') }}</p>
         <div class="services__grid">
             <div
                 v-for="(item, i) in tm('services.items')"
                 :key="i"
+                v-reveal="{ delay: i * 120 }"
                 class="services__card"
             >
                 <span class="services__number">{{

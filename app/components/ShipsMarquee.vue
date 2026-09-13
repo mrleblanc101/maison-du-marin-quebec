@@ -10,7 +10,7 @@ const modules = [Autoplay, FreeMode]
 </script>
 
 <template>
-    <div class="gallery">
+    <div v-reveal class="gallery">
         <div class="gallery__header">
             <div>
                 <div class="gallery__surtitle">

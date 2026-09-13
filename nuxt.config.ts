@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
+        '@nuxt/eslint',
         '@nuxt/fonts',
         '@nuxt/icon',
         '@nuxt/image',
@@ -37,7 +38,7 @@ export default defineNuxtConfig({
             { code: 'fr', language: 'fr-CA', name: 'Français' },
             { code: 'en', language: 'en-CA', name: 'English' },
         ],
-        defaultLocale: 'fr',
+        defaultLocale: 'en',
         strategy: 'prefix_except_default',
         detectBrowserLanguage: {
             useCookie: true,

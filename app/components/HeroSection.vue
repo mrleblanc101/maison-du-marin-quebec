@@ -11,19 +11,23 @@ const { t } = useI18n()
         />
         <div class="hero__content-wrap">
             <div class="hero__content">
-                <div class="hero__surtitle">
+                <div v-reveal="{ delay: 0 }" class="hero__surtitle">
                     <span class="hero__surtitle-rule" />
                     <span class="hero__surtitle-text">{{
                         t('hero.surtitle')
                     }}</span>
                 </div>
-                <h1 class="hero__title">{{ t('hero.title') }}</h1>
-                <p class="hero__subtitle">{{ t('hero.subtitle') }}</p>
-                <p class="hero__paragraph">
+                <h1 v-reveal="{ delay: 120 }" class="hero__title">
+                    {{ t('hero.title') }}
+                </h1>
+                <p v-reveal="{ delay: 240 }" class="hero__subtitle">
+                    {{ t('hero.subtitle') }}
+                </p>
+                <p v-reveal="{ delay: 360 }" class="hero__paragraph">
                     {{ t('hero.p1') }}<br />
                     {{ t('hero.p2') }}
                 </p>
-                <SocialLinks class="hero__social" />
+                <SocialLinks v-reveal="{ delay: 480 }" class="hero__social" />
             </div>
         </div>
     </div>

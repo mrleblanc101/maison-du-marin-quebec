@@ -3,7 +3,7 @@ const { t, tm, rt } = useI18n()
 </script>
 
 <template>
-    <div id="donation" class="donation-wrap">
+    <div id="donation" v-reveal class="donation-wrap">
         <div class="donation">
             <div class="donation__intro">
                 <div class="donation__surtitle">
@@ -32,7 +32,7 @@ const { t, tm, rt } = useI18n()
                 </div>
             </div>
             <div class="donation__cards">
-                <div class="donation__card">
+                <div v-reveal="{ delay: 0 }" class="donation__card">
                     <div class="donation__card-label">
                         {{ t('donation.onsite.label') }}
                     </div>
@@ -40,7 +40,7 @@ const { t, tm, rt } = useI18n()
                         {{ t('donation.onsite.text') }}
                     </div>
                 </div>
-                <div class="donation__card">
+                <div v-reveal="{ delay: 120 }" class="donation__card">
                     <div class="donation__card-label">
                         {{ t('donation.mail.label') }}
                     </div>
@@ -56,7 +56,7 @@ const { t, tm, rt } = useI18n()
                         </template>
                     </div>
                 </div>
-                <div class="donation__card">
+                <div v-reveal="{ delay: 240 }" class="donation__card">
                     <div class="donation__card-label">
                         {{ t('donation.online.label') }}
                     </div>
