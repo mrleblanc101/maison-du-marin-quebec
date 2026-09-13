@@ -3,7 +3,7 @@ const { t, tm, rt } = useI18n()
 </script>
 
 <template>
-  <div class="donation-wrap">
+  <div id="donation" class="donation-wrap">
     <div class="donation">
       <div>
         <div class="donation__surtitle">{{ t('donation.surtitle') }}</div>

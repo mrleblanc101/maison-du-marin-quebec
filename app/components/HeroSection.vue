@@ -18,6 +18,7 @@ const { t } = useI18n()
             {{ t('hero.p1') }}<br>
             {{ t('hero.p2') }}
         </p>
+        <SocialLinks class="hero__social" />
       </div>
     </div>
   </div>
@@ -127,6 +128,10 @@ const { t } = useI18n()
 
 .hero__paragraph:last-child {
   margin-bottom: 0;
+}
+
+.hero__social {
+  margin-top: 22px;
 }
 </style>
 
