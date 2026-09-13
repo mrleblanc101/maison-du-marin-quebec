@@ -1,42 +1,42 @@
 :root {
-  --color-bg: #f4efe7;
-  --color-ink: #12303f;
-  --color-navy: #0e3348;
-  --color-slate: #476a81;
-  --color-blue: #0077b4;
-  --color-border: #ddd3c4;
-  --color-border-soft: #e7dfd2;
-  --color-border-card: #e4dacb;
-  --color-body: #3a4f5c;
-  --color-muted: #4e6472;
-  --color-footer-muted: #7a8b95;
+    --color-bg: #f4efe7;
+    --color-ink: #12303f;
+    --color-navy: #0e3348;
+    --color-slate: #476a81;
+    --color-blue: #0077b4;
+    --color-border: #ddd3c4;
+    --color-border-soft: #e7dfd2;
+    --color-border-card: #e4dacb;
+    --color-body: #3a4f5c;
+    --color-muted: #4e6472;
+    --color-footer-muted: #7a8b95;
 
-  --font-serif: 'Newsreader', Georgia, serif;
-  --font-sans: 'Public Sans', system-ui, sans-serif;
+    --font-serif: 'Newsreader', Georgia, serif;
+    --font-sans: 'Public Sans', system-ui, sans-serif;
 }
 
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 58px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 58px;
 }
 
 body {
-  margin: 0;
-  background: var(--color-bg);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
 }
 
 a {
-  color: var(--color-blue);
+    color: var(--color-blue);
 }
 
 a:hover {
-  color: var(--color-navy);
+    color: var(--color-navy);
 }
