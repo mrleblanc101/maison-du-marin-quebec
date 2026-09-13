@@ -4,46 +4,67 @@ const headerVisible = useHeadroom()
 </script>
 
 <template>
-    <div class="site-header" :class="{ 'site-header--hidden': !headerVisible }">
-        <div class="site-header__logo-wrap">
-            <div class="site-header__logo-bg" />
-            <img
-                src="/images/mdm-horizontal.svg"
-                alt="La Maison du Marin Québec — Seamen's Club"
-                class="site-header__logo"
-            />
-        </div>
-        <div class="site-header__actions">
-            <a :href="t('cta.href')" class="site-header__cta">
-                <Icon :name="t('cta.icon')" class="site-header__cta-icon" />
-                <span
-                    class="site-header__cta-label site-header__cta-label--mobile"
-                    >{{ t('cta.label.mobile') }}</span
-                >
-                <span
-                    class="site-header__cta-label site-header__cta-label--desktop"
-                    >{{ t('cta.label.desktop') }}</span
-                >
-            </a>
-            <LangSwitch />
+    <div class="site-header-sticky">
+        <div
+            class="site-header"
+            :class="{ 'site-header--hidden': !headerVisible }"
+        >
+            <div class="site-header__logo-wrap">
+                <div class="site-header__logo-bg" />
+                <img
+                    src="/images/mdm-horizontal.svg"
+                    alt="La Maison du Marin Québec — Seamen's Club"
+                    class="site-header__logo"
+                />
+            </div>
+            <div class="site-header__actions">
+                <a :href="t('cta.href')" class="site-header__cta">
+                    <Icon :name="t('cta.icon')" class="site-header__cta-icon" />
+                    <span
+                        class="site-header__cta-label site-header__cta-label--mobile"
+                        >{{ t('cta.label.mobile') }}</span
+                    >
+                    <span
+                        class="site-header__cta-label site-header__cta-label--desktop"
+                        >{{ t('cta.label.desktop') }}</span
+                    >
+                </a>
+                <LangSwitch />
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.site-header {
+/*
+ * Sticky positioning lives on this wrapper, kept free of filter/transform.
+ * On iOS Safari, position: sticky recalculates every scroll frame — combined
+ * with an animated transform *and* a filter (drop-shadow) on the very same
+ * element, that recalculation fights the transition and both become
+ * expensive to recomposite, which is what caused the stutter. Splitting them
+ * across two elements keeps sticky's per-frame work cheap, while the inner
+ * element's filter+transform (which must stay together so the shadow tracks
+ * the header as it hides) get their own promoted GPU layer instead.
+ */
+.site-header-sticky {
     position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: start;
     gap: 8px 12px;
     width: 100%;
-    z-index: 10;
-    top: 0;
     filter: drop-shadow(0 1px 0 var(--color-border))
         drop-shadow(0 2px 10px rgba(14, 51, 72, 0.07));
     background-color: var(--color-bg);
     transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .site-header--hidden {

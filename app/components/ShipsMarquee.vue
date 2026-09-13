@@ -32,6 +32,8 @@ const modules = [Autoplay, FreeMode]
                 :free-mode="true"
                 :grab-cursor="true"
                 :speed="5000"
+                :observer="true"
+                :observe-parents="true"
                 :autoplay="{
                     delay: 0,
                     disableOnInteraction: false,
@@ -48,6 +50,7 @@ const modules = [Autoplay, FreeMode]
                         :alt="`${t('gallery.item')} ${n}`"
                         :radius="4"
                         fit="natural"
+                        loading="eager"
                     />
                 </SwiperSlide>
             </Swiper>
@@ -116,6 +119,14 @@ const modules = [Autoplay, FreeMode]
     position: relative;
     height: 300px;
     width: auto;
+    /* Width otherwise comes purely from the photo's decoded intrinsic size,
+       so the slide is genuinely 0px wide until it loads. Swiper measures
+       slide width at init — with every slide reporting 0px it concludes it
+       needs far more than are present to fill one view, and logs the loop
+       warning (observer/observeParents below fix the resulting layout once
+       images do load, but by then the warning already fired). A sane
+       minimum means Swiper never sees a 0px slide in the first place. */
+    min-width: 220px;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 4px;

@@ -12,8 +12,16 @@ const props = withDefaults(
          * image's intrinsic aspect ratio — no cropping, no ratio bookkeeping needed.
          */
         fit?: 'fill' | 'natural'
+        /**
+         * 'natural' mode has no reserved width — until the image decodes, it's
+         * 0px wide (unknown intrinsic size), which breaks anything measuring
+         * layout early (e.g. Swiper's loop mode sizing itself off 0-width
+         * slides). Pass 'eager' there so the browser starts decoding
+         * immediately instead of waiting for scroll proximity.
+         */
+        loading?: 'lazy' | 'eager'
     }>(),
-    { radius: 0, fit: 'fill' },
+    { radius: 0, fit: 'fill', loading: 'lazy' },
 )
 
 // Static `src="/images/..."` attributes get the app.baseURL prefix rewritten
@@ -33,7 +41,7 @@ const resolvedSrc = computed(() => {
         :class="`image-placeholder--${fit}`"
         :style="{ borderRadius: `${radius}px` }"
     >
-        <img v-if="resolvedSrc" :src="resolvedSrc" :alt="alt || ''" loading="lazy" />
+        <img v-if="resolvedSrc" :src="resolvedSrc" :alt="alt || ''" :loading="loading" />
         <span v-else-if="label" class="image-placeholder__label">{{
             label
         }}</span>
