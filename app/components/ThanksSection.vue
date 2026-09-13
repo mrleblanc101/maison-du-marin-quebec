@@ -28,7 +28,7 @@ const { t } = useI18n()
 .thanks-wrap {
   max-width: 1120px;
   margin: 56px auto 0;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 .thanks {

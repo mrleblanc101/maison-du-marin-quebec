@@ -23,7 +23,7 @@ const { t } = useI18n()
 .mission {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 60px 28px 0;
+  padding: 60px 24px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 44px;

@@ -20,7 +20,7 @@ const { t } = useI18n()
 .footer {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 44px 28px 56px;
+  padding: 44px 24px 56px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;

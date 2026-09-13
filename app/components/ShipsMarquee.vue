@@ -53,7 +53,7 @@ const modules = [Autoplay, FreeMode]
 .gallery {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 60px 28px 0;
+  padding: 60px 24px 0;
 }
 
 .gallery__header {
@@ -103,7 +103,7 @@ const modules = [Autoplay, FreeMode]
 
 .gallery__swiper {
   height: 300px;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 .gallery__tile {

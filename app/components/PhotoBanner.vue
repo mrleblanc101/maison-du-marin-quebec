@@ -15,7 +15,7 @@ const { t } = useI18n()
 .photo-banner {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 56px 28px 0;
+  padding: 56px 24px 0;
 }
 
 .photo-banner__frame {

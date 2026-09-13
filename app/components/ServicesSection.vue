@@ -20,7 +20,7 @@ const { t, tm, rt } = useI18n()
 .services {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 56px 28px 0;
+  padding: 56px 24px 0;
 }
 
 .services__title {
@@ -40,7 +40,7 @@ const { t, tm, rt } = useI18n()
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
 }
 
@@ -76,13 +76,13 @@ const { t, tm, rt } = useI18n()
   margin: 0;
 }
 
-@media (max-width: 599px) {
+@media (min-width: 640px) {
   .services__grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1024px) {
   .services__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

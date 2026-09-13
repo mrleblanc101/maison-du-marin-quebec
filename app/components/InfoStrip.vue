@@ -39,12 +39,12 @@ const { t, tm, rt } = useI18n()
 .info-strip-wrap {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 40px 28px 0;
+  padding: 40px 24px 0;
 }
 
 .info-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1px;
   background: var(--color-border);
   border-top: 1px solid var(--color-border);
@@ -71,9 +71,9 @@ const { t, tm, rt } = useI18n()
   color: var(--color-ink);
 }
 
-@media (max-width: 759px) {
+@media (min-width: 768px) {
   .info-strip {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 </style>

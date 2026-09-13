@@ -40,7 +40,7 @@ const { t, tm, rt } = useI18n()
 .donation-wrap {
   max-width: 1120px;
   margin: 60px auto 0;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 .donation {
@@ -48,9 +48,15 @@ const { t, tm, rt } = useI18n()
   border-radius: 6px;
   padding: clamp(30px, 4vw, 52px);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 36px;
   align-items: start;
+}
+
+@media (min-width: 768px) {
+  .donation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .donation__surtitle {
