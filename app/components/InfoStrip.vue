@@ -3,7 +3,7 @@ const { t, tm, rt } = useI18n()
 </script>
 
 <template>
-    <div v-reveal class="info-strip-wrap">
+    <div class="info-strip-wrap">
         <div class="info-strip">
             <div class="info-strip__cell">
                 <div v-reveal="{ delay: 0 }">
