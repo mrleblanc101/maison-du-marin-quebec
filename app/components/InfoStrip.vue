@@ -77,3 +77,24 @@ const { t, tm, rt } = useI18n()
   }
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "info": {
+      "address": { "label": "Adresse", "lines": ["Quai 26, Port de Québec", "CP 80, Succ. Haute-Ville", "Québec (QC) G1R 4M8"] },
+      "hours": { "label": "Horaires", "line1": "Ouvert 365 jours par année.", "text": "Horaire détaillé sur la {link}.", "linkText": "page Facebook" },
+      "volunteering": { "label": "Bénévolat", "text": "Intéressé à donner de votre temps?" }
+    },
+    "common": { "phone": "418 692-3376" }
+  },
+  "en": {
+    "info": {
+      "address": { "label": "Address", "lines": ["Pier 26, Port of Québec", "PO Box 80, Haute-Ville Stn", "Québec QC G1R 4M8"] },
+      "hours": { "label": "Hours", "line1": "Open 365 days a year.", "text": "Detailed hours on the {link}.", "linkText": "Facebook page" },
+      "volunteering": { "label": "Volunteering", "text": "Interested in giving your time?" }
+    },
+    "common": { "phone": "418 692-3376" }
+  }
+}
+</i18n>

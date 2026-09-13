@@ -8,9 +8,9 @@ const { t } = useI18n()
       <ImagePlaceholder src="/images/mission.png" alt="Équipage et bénévoles de la Maison du Marin" :radius="4" />
     </div>
     <div>
-      <div class="mission__kicker">
-        <span class="mission__kicker-rule" />
-        <span class="mission__kicker-text">{{ t('mission.kicker') }}</span>
+      <div class="mission__surtitle">
+        <span class="mission__surtitle-rule" />
+        <span class="mission__surtitle-text">{{ t('mission.surtitle') }}</span>
       </div>
       <h2 class="mission__title">{{ t('mission.title') }}</h2>
       <p class="mission__paragraph">{{ t('mission.p1') }}</p>
@@ -39,21 +39,21 @@ const { t } = useI18n()
   overflow: hidden;
 }
 
-.mission__kicker {
+.mission__surtitle {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
 
-.mission__kicker-rule {
+.mission__surtitle-rule {
   width: 26px;
   height: 2px;
   background: var(--color-blue);
   display: block;
 }
 
-.mission__kicker-text {
+.mission__surtitle-text {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -83,3 +83,24 @@ const { t } = useI18n()
   margin-bottom: 0;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "mission": {
+      "surtitle": "Notre mission",
+      "title": "Bien plus qu'une simple pause",
+      "p1": "Organisme à but non lucratif, la Maison du Marin répond aux besoins physiques, émotionnels et spirituels de tous les acteurs du Port. L'objectif : offrir un environnement accueillant qui fait office de véritable chez-soi.",
+      "p2": "Membres d'équipage, partenaires commerciaux ou visiteurs — tous y sont chaleureusement accueillis. C'est une communauté portuaire où chacun se sent intégré et soutenu."
+    }
+  },
+  "en": {
+    "mission": {
+      "surtitle": "Our mission",
+      "title": "Far more than a place to rest",
+      "p1": "As a not-for-profit, the Seamen's Club meets the physical, emotional and spiritual needs of everyone working at the Port. The goal: a welcoming environment that truly feels like home.",
+      "p2": "Crew members, business partners and visitors alike are warmly received. It is a port community where everyone feels included and supported."
+    }
+  }
+}
+</i18n>

@@ -88,3 +88,32 @@ const { t, tm, rt } = useI18n()
   }
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "services": {
+      "title": "Services offerts",
+      "subtitle": "Gratuits, sur place, pour tous les équipages en escale.",
+      "items": [
+        { "title": "Espace communautaire", "text": "Un salon avec billard, piano et fauteuils, pour se détendre et rencontrer d'autres équipages." },
+        { "title": "Cabine Wi-Fi", "text": "Une cabine dédiée pour un appel privé et une connexion fiable à tout moment." },
+        { "title": "Dépanneur", "text": "L'essentiel du quotidien, sans quitter le territoire portuaire." },
+        { "title": "Comptoir de vêtements", "text": "Des morceaux adaptés au climat parfois rigoureux qui vous attend à terre." }
+      ]
+    }
+  },
+  "en": {
+    "services": {
+      "title": "Services on site",
+      "subtitle": "Free, on site, for every crew in port.",
+      "items": [
+        { "title": "Community lounge", "text": "A living room with pool table, piano and armchairs — unwind and meet other crews." },
+        { "title": "Wi-Fi booth", "text": "A private booth for calls home and a reliable connection any time." },
+        { "title": "Convenience store", "text": "Everyday essentials, without leaving port grounds." },
+        { "title": "Clothing counter", "text": "Warm gear suited to the sometimes harsh weather waiting for you ashore." }
+      ]
+    }
+  }
+}
+</i18n>

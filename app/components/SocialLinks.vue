@@ -54,3 +54,20 @@ const { t } = useI18n()
   color: #ffffff;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "nav": {
+      "facebook": "Facebook",
+      "whatsapp": "WhatsApp (lien à compléter)"
+    }
+  },
+  "en": {
+    "nav": {
+      "facebook": "Facebook",
+      "whatsapp": "WhatsApp (link to be added)"
+    }
+  }
+}
+</i18n>

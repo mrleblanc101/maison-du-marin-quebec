@@ -87,3 +87,24 @@ const { t } = useI18n()
   height: auto;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "thanks": {
+      "label": "Remerciements",
+      "text": "Merci au {port} et à la {cpbsl} pour leur soutien fidèle à la Maison du Marin.",
+      "port": "Port de Québec",
+      "cpbsl": "Corporation des pilotes du Bas Saint-Laurent"
+    }
+  },
+  "en": {
+    "thanks": {
+      "label": "With thanks",
+      "text": "Our thanks to the {port} and the {cpbsl} for their steadfast support of the Seamen's Club.",
+      "port": "Port of Québec",
+      "cpbsl": "Corporation des pilotes du Bas Saint-Laurent"
+    }
+  }
+}
+</i18n>

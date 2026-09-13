@@ -48,3 +48,14 @@ const { t } = useI18n()
   text-align: right;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "footer": { "copyright": "© La Maison du Marin Québec" }
+  },
+  "en": {
+    "footer": { "copyright": "© La Maison du Marin Québec" }
+  }
+}
+</i18n>

@@ -33,3 +33,14 @@ const { t } = useI18n()
   margin: 12px 0 0;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "photoCaption": "Une porte ouverte à quelques pas du quai, quelle que soit l'heure d'arrivée."
+  },
+  "en": {
+    "photoCaption": "An open door steps from the pier, whatever time you come ashore."
+  }
+}
+</i18n>

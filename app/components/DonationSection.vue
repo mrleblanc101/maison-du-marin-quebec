@@ -6,7 +6,7 @@ const { t, tm, rt } = useI18n()
   <div class="donation-wrap">
     <div class="donation">
       <div>
-        <div class="donation__kicker">{{ t('donation.kicker') }}</div>
+        <div class="donation__surtitle">{{ t('donation.surtitle') }}</div>
         <h2 class="donation__title">{{ t('donation.title') }}</h2>
         <p class="donation__paragraph">{{ t('donation.p1') }}</p>
         <p class="donation__paragraph donation__paragraph--last">{{ t('donation.p2') }}</p>
@@ -53,7 +53,7 @@ const { t, tm, rt } = useI18n()
   align-items: start;
 }
 
-.donation__kicker {
+.donation__surtitle {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -118,3 +118,32 @@ const { t, tm, rt } = useI18n()
   border-bottom: 1px solid #9fcfe8;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "donation": {
+      "surtitle": "Soutenir la Maison du Marin",
+      "title": "Faire un don",
+      "p1": "La Maison du Marin prospère grâce à la générosité de ses donateurs, de ses bénévoles et de partenaires engagés.",
+      "p2": "Chaque don soutient directement les activités et l'accueil des équipages.",
+      "onsite": { "label": "Sur place", "text": "Boîte de dons à l'accueil de la Maison du Marin, quai 26." },
+      "mail": { "label": "Par la poste", "lines": ["Chèque libellé à la Maison du Marin", "Quai 26, Port de Québec, CP 80, Succ. Haute-Ville, Québec (QC) G1R 4M8"] },
+      "phone": { "label": "Nous parler", "text": "— dons majeurs, commandites et partenariats." }
+    },
+    "common": { "phone": "418 692-3376" }
+  },
+  "en": {
+    "donation": {
+      "surtitle": "Support the Seamen's Club",
+      "title": "Make a donation",
+      "p1": "The Seamen's Club thrives on the generosity of its donors, volunteers and committed partners.",
+      "p2": "Every gift directly supports its activities and the welcome extended to crews.",
+      "onsite": { "label": "On site", "text": "Donation box at the Seamen's Club front desk, Pier 26." },
+      "mail": { "label": "By mail", "lines": ["Cheque payable to Maison du Marin", "Pier 26, Port of Québec, PO Box 80, Haute-Ville Stn, Québec QC G1R 4M8"] },
+      "phone": { "label": "Talk to us", "text": "— major gifts, sponsorships and partnerships." }
+    },
+    "common": { "phone": "418 692-3376" }
+  }
+}
+</i18n>

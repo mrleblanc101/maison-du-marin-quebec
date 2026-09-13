@@ -8,9 +8,9 @@ const { t } = useI18n()
     <div class="hero__scrim" />
     <div class="hero__content-wrap">
       <div class="hero__content">
-        <div class="hero__kicker">
-          <span class="hero__kicker-rule" />
-          <span class="hero__kicker-text">{{ t('hero.kicker') }}</span>
+        <div class="hero__surtitle">
+          <span class="hero__surtitle-rule" />
+          <span class="hero__surtitle-text">{{ t('hero.surtitle') }}</span>
         </div>
         <h1 class="hero__title">{{ t('hero.title') }}</h1>
         <p class="hero__subtitle">{{ t('hero.subtitle') }}</p>
@@ -65,21 +65,21 @@ const { t } = useI18n()
   min-width: 0;
 }
 
-.hero__kicker {
+.hero__surtitle {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.hero__kicker-rule {
+.hero__surtitle-rule {
   width: 26px;
   height: 2px;
   background: #4fb6e8;
   display: block;
 }
 
-.hero__kicker-text {
+.hero__surtitle-text {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -119,3 +119,26 @@ const { t } = useI18n()
   margin-bottom: 0;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "hero": {
+      "surtitle": "Quai 26 · Port de Québec",
+      "title": "Maison du Marin",
+      "subtitle": "Où se rassemblent les marins du monde entier.",
+      "p1": "Au cœur des installations portuaires, la Maison du Marin est un lieu chaleureux conçu pour accueillir tous les marins en escale au Port de Québec. Ouverte 365 jours par année, animée par des bénévoles dévoués.",
+      "p2": "Que votre escale soit brève ou prolongée, c'est votre havre de bien-être à terre. Au plaisir de vous accueillir."
+    }
+  },
+  "en": {
+    "hero": {
+      "surtitle": "Pier 26 · Port of Québec",
+      "title": "Seamen's Club",
+      "subtitle": "Where seafarers from around the world come together.",
+      "p1": "At the heart of the port facilities, the Seamen's Club is a warm place built to welcome every sailor calling at the Port of Québec. Open 365 days a year, run by dedicated volunteers.",
+      "p2": "Whether your call is short or long, this is your home away from home ashore. We look forward to welcoming you."
+    }
+  }
+}
+</i18n>

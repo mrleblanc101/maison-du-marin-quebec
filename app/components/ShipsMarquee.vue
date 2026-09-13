@@ -13,9 +13,9 @@ const modules = [Autoplay, FreeMode]
   <div class="gallery">
     <div class="gallery__header">
       <div>
-        <div class="gallery__kicker">
-          <span class="gallery__kicker-rule" />
-          <span class="gallery__kicker-text">{{ t('gallery.kicker') }}</span>
+        <div class="gallery__surtitle">
+          <span class="gallery__surtitle-rule" />
+          <span class="gallery__surtitle-text">{{ t('gallery.surtitle') }}</span>
         </div>
         <h2 class="gallery__title">{{ t('gallery.title') }}</h2>
       </div>
@@ -56,21 +56,21 @@ const modules = [Autoplay, FreeMode]
   margin-bottom: 20px;
 }
 
-.gallery__kicker {
+.gallery__surtitle {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 14px;
 }
 
-.gallery__kicker-rule {
+.gallery__surtitle-rule {
   width: 26px;
   height: 2px;
   background: var(--color-blue);
   display: block;
 }
 
-.gallery__kicker-text {
+.gallery__surtitle-text {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -111,3 +111,22 @@ const modules = [Autoplay, FreeMode]
   pointer-events: none;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "gallery": {
+      "surtitle": "En images",
+      "title": "Les bateaux en visite",
+      "item": "Publication"
+    }
+  },
+  "en": {
+    "gallery": {
+      "surtitle": "In pictures",
+      "title": "Ships calling at the port",
+      "item": "Post"
+    }
+  }
+}
+</i18n>

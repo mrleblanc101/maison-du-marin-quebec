@@ -5,9 +5,9 @@ const { t } = useI18n()
 <template>
   <div class="shuttle">
     <div>
-      <div class="shuttle__kicker">
-        <span class="shuttle__kicker-rule" />
-        <span class="shuttle__kicker-text">{{ t('shuttle.kicker') }}</span>
+      <div class="shuttle__surtitle">
+        <span class="shuttle__surtitle-rule" />
+        <span class="shuttle__surtitle-text">{{ t('shuttle.surtitle') }}</span>
       </div>
       <h2 class="shuttle__title">{{ t('shuttle.title') }}</h2>
       <p class="shuttle__paragraph">{{ t('shuttle.p1') }}</p>
@@ -43,21 +43,21 @@ const { t } = useI18n()
   overflow: hidden;
 }
 
-.shuttle__kicker {
+.shuttle__surtitle {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
 
-.shuttle__kicker-rule {
+.shuttle__surtitle-rule {
   width: 26px;
   height: 2px;
   background: var(--color-blue);
   display: block;
 }
 
-.shuttle__kicker-text {
+.shuttle__surtitle-text {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -87,3 +87,26 @@ const { t } = useI18n()
   margin-bottom: 0;
 }
 </style>
+
+<i18n lang="json">
+{
+  "fr": {
+    "shuttle": {
+      "surtitle": "Service de transport",
+      "title": "La navette qui vous sort du quai",
+      "p1": "Le territoire portuaire n'est pas fait pour les piétons. La navette de la Maison du Marin, conduite par nos bénévoles, vous emmène du navire à la Maison du Marin et vers la ville : épicerie, pharmacie, commerces et Vieux-Québec.",
+      "p2": "Réservez à l'accueil ou par téléphone au {phone}. Les disponibilités varient selon les bénévoles en service."
+    },
+    "common": { "phone": "418 692-3376" }
+  },
+  "en": {
+    "shuttle": {
+      "surtitle": "Transport service",
+      "title": "The shuttle that gets you off the pier",
+      "p1": "Port grounds are no place to walk. The Seamen's Club shuttle, driven by our volunteers, takes you from the ship to the club and into town: grocery store, pharmacy, shops and Old Québec.",
+      "p2": "Book at the front desk or by phone at {phone}. Availability depends on the volunteers on duty."
+    },
+    "common": { "phone": "418 692-3376" }
+  }
+}
+</i18n>
