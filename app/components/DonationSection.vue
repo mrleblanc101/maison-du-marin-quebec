@@ -24,7 +24,9 @@ const { t, tm, rt } = useI18n()
                         class="donation__card-text"
                     >
                         <template #phone>
-                            <a href="tel:4186923376" class="donation__phone-link"
+                            <a
+                                href="tel:4186923376"
+                                class="donation__phone-link"
                                 >{{ t('common.phone') }}</a
                             >
                         </template>
@@ -69,8 +71,11 @@ const { t, tm, rt } = useI18n()
                         rel="noopener"
                         class="donation__online-btn"
                     >
-                    {{ t('donation.online.cta') }}
-                    <Icon name="lucide:external-link" class="donation__online-icon" />
+                        {{ t('donation.online.cta') }}
+                        <Icon
+                            name="lucide:external-link"
+                            class="donation__online-icon"
+                        />
                     </a>
                 </div>
             </div>

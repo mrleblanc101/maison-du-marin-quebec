@@ -41,7 +41,12 @@ const resolvedSrc = computed(() => {
         :class="`image-placeholder--${fit}`"
         :style="{ borderRadius: `${radius}px` }"
     >
-        <img v-if="resolvedSrc" :src="resolvedSrc" :alt="alt || ''" :loading="loading" />
+        <img
+            v-if="resolvedSrc"
+            :src="resolvedSrc"
+            :alt="alt || ''"
+            :loading="loading"
+        />
         <span v-else-if="label" class="image-placeholder__label">{{
             label
         }}</span>

@@ -18,7 +18,8 @@ export default <RouterConfig>{
         if (from === START_LOCATION) return false
 
         if (to.path.replace(/\/$/, '') === from.path.replace(/\/$/, '')) {
-            if (from.hash && !to.hash) return savedPosition ?? { left: 0, top: 0 }
+            if (from.hash && !to.hash)
+                return savedPosition ?? { left: 0, top: 0 }
             if (to.hash) return { el: to.hash, top: 0, behavior: 'smooth' }
             return false
         }
@@ -26,5 +27,5 @@ export default <RouterConfig>{
         if (savedPosition) return savedPosition
         if (to.hash) return { el: to.hash, top: 0, behavior: 'smooth' }
         return { left: 0, top: 0 }
-    }
+    },
 }

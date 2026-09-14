@@ -4,7 +4,9 @@
  * (scrolling down, past `offset`). The component decides how to render that
  * (transform/transition) — this just tracks direction.
  */
-export function useHeadroom(options: { offset?: number; tolerance?: number } = {}) {
+export function useHeadroom(
+    options: { offset?: number; tolerance?: number } = {},
+) {
     const { offset = 72, tolerance = 5 } = options
     const visible = ref(true)
 
@@ -31,7 +33,9 @@ export function useHeadroom(options: { offset?: number; tolerance?: number } = {
             requestAnimationFrame(update)
         }
 
-        onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
+        onMounted(() =>
+            window.addEventListener('scroll', onScroll, { passive: true }),
+        )
         onUnmounted(() => window.removeEventListener('scroll', onScroll))
     }
 
