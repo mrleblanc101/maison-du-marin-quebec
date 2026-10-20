@@ -25,7 +25,7 @@ export default defineNuxtConfig({
                 },
                 {
                     rel: 'manifest',
-                    href: `${process.env.NUXT_APP_BASE_URL || '/'}manifest.json`,
+                    href: `${process.env.NUXT_APP_BASE_URL || '/'}manifest.webmanifest`,
                 },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 {
