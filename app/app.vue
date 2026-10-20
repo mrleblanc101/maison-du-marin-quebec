@@ -29,7 +29,7 @@ useSeoMeta({
 })
 
 useHead({
-    meta: [{ name: 'theme-color', content: '#0e3348' }],
+    meta: [{ name: 'theme-color', content: '#0077b4' }],
 })
 </script>
 
