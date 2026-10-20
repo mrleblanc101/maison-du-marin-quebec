@@ -9,6 +9,20 @@ export default defineNuxtConfig({
         baseURL: process.env.NUXT_APP_BASE_URL || '/',
         head: {
             link: [
+                {
+                    rel: 'icon',
+                    type: 'image/svg+xml',
+                    href: `${process.env.NUXT_APP_BASE_URL || '/'}images/logo.svg`,
+                },
+                {
+                    rel: 'icon',
+                    href: `${process.env.NUXT_APP_BASE_URL || '/'}favicon.ico`,
+                    sizes: '48x48',
+                },
+                {
+                    rel: 'apple-touch-icon',
+                    href: `${process.env.NUXT_APP_BASE_URL || '/'}apple-touch-icon.png`,
+                },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 {
                     rel: 'preconnect',

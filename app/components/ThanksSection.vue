@@ -5,7 +5,7 @@ const { t, locale } = useI18n()
 <template>
     <div v-reveal class="thanks-wrap">
         <div class="thanks">
-            <div>
+            <div class="thanks__body">
                 <div class="thanks__label">{{ t('thanks.label') }}</div>
                 <i18n-t keypath="thanks.text" tag="p" class="thanks__text">
                     <template #port>
@@ -60,10 +60,10 @@ const { t, locale } = useI18n()
     border-bottom: 1px solid var(--color-border);
     padding-top: 36px;
     padding-bottom: 36px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 32px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .thanks__label {
@@ -90,15 +90,35 @@ const { t, locale } = useI18n()
 }
 
 .thanks__logos {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
     align-items: center;
-    gap: 36px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-items: start;
+    gap: 24px 28px;
+    width: 100%;
+    max-width: 400px;
+}
+
+@media (min-width: 768px) {
+    .thanks {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .thanks__body {
+        flex: 1 1 260px;
+    }
+
+    .thanks__logos {
+        flex: 0 1 400px;
+        justify-items: center;
+    }
 }
 
 .thanks__logo {
     display: block;
+    max-width: 100%;
 }
 
 .thanks__logo--port {
@@ -117,7 +137,7 @@ const { t, locale } = useI18n()
 }
 
 .thanks__logo--issc {
-    width: 240px;
+    width: 100%;
     height: auto;
 }
 </style>
