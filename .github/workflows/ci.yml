@@ -35,10 +35,17 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
+            - name: Read the short commit hash
+              id: git
+              run: echo "short_sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
             - name: Generate static site
               run: pnpm generate
               env:
                   NUXT_APP_BASE_URL: /maison-du-marin-quebec/
+                  # Shown in the footer (a branch push has no tag, so it's left empty)
+                  NUXT_PUBLIC_GIT_TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+                  NUXT_PUBLIC_GIT_SHORT_SHA: ${{ steps.git.outputs.short_sha }}
 
             - name: Deploy to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@v4.4.1

@@ -41,6 +41,12 @@ export default defineNuxtConfig({
         },
     },
 
+    runtimeConfig: {
+        public: {
+            gitShortSha: '0000000',
+        },
+    },
+
     modules: [
         '@nuxt/eslint',
         '@nuxt/fonts',

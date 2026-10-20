@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { gitTag, gitShortSha } = useRuntimeConfig().public
 </script>
 
 <template>
@@ -11,7 +12,12 @@ const { t } = useI18n()
         />
         <div class="footer__side">
             <SocialLinks :size="44" />
-            <div class="footer__copyright">{{ t('footer.copyright') }}</div>
+            <div class="footer__copyright">
+                {{ t('footer.copyright') }}
+                <div v-if="gitShortSha" class="footer__version">
+                    Version: {{ [gitTag, gitShortSha].filter(Boolean).join(' • ') }}
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -46,6 +52,12 @@ const { t } = useI18n()
     font-size: 12.5px;
     color: var(--color-footer-muted);
     text-align: right;
+}
+
+.footer__version {
+    margin-top: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
 }
 </style>
 
