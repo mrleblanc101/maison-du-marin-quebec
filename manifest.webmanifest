@@ -3,7 +3,7 @@
     "short_name": "Maison du Marin",
     "description": "Where seafarers from around the world come together.",
     "id": "./?version=1",
-    "start_url": "./",
+    "start_url": "./?source=pwa",
     "scope": "./",
     "display": "standalone",
     "background_color": "#f4efe7",
