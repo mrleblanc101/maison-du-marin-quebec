@@ -2,6 +2,7 @@
     "name": "La Maison du Marin Québec",
     "short_name": "Maison du Marin",
     "description": "Where seafarers from around the world come together.",
+    "id": "./?version=1",
     "start_url": "./",
     "scope": "./",
     "display": "standalone",
