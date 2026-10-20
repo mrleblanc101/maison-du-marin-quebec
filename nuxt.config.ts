@@ -23,6 +23,10 @@ export default defineNuxtConfig({
                     rel: 'apple-touch-icon',
                     href: `${process.env.NUXT_APP_BASE_URL || '/'}apple-touch-icon.png`,
                 },
+                {
+                    rel: 'manifest',
+                    href: `${process.env.NUXT_APP_BASE_URL || '/'}manifest.json`,
+                },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 {
                     rel: 'preconnect',
