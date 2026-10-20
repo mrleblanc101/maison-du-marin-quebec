@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
+
+// Static `src="/images/..."` attributes get the app.baseURL prefix at build time, but the
+// qcescf logo's src is bound dynamically, so the prefix has to be applied by hand.
+const { baseURL } = useRuntimeConfig().app
 </script>
 
 <template>
@@ -34,7 +38,7 @@ const { t, locale } = useI18n()
                     class="thanks__logo thanks__logo--port"
                 />
                 <img
-                    :src="`/images/qcescf-${locale === 'en' ? 'en' : 'fr'}.png`"
+                    :src="`${baseURL}images/qcescf-${locale === 'en' ? 'en' : 'fr'}.png`"
                     :alt="t('thanks.qcescf')"
                     class="thanks__logo thanks__logo--qcescf"
                 />
