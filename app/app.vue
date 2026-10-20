@@ -1,8 +1,10 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-const SITE_URL = 'https://mrleblanc101.github.io/maison-du-marin-quebec'
-const OG_IMAGE = `${SITE_URL}/images/og-image.jpg`
+const SITE_URL = import.meta.dev
+    ? useRequestURL().origin
+    : 'https://mrleblanc101.github.io/maison-du-marin-quebec'
+const OG_IMAGE = `${SITE_URL}/images/og-logo.jpg`
 
 // Auto-generated <html lang>, canonical link, and hreflang alternates for
 // every configured locale (fr at `/`, en at `/en`, per i18n.baseUrl above).
@@ -18,7 +20,8 @@ useSeoMeta({
     ogSiteName: () => t('seo.orgName'),
     ogImage: OG_IMAGE,
     ogImageWidth: 1200,
-    ogImageHeight: 800,
+    ogImageHeight: 630,
+    ogImageAlt: () => t('seo.ogImageAlt'),
     twitterCard: 'summary_large_image',
     twitterTitle: () => t('seo.title'),
     twitterDescription: () => t('seo.description'),
@@ -40,14 +43,16 @@ useHead({
         "seo": {
             "orgName": "La Maison du Marin Québec",
             "title": "La Maison du Marin Québec — Où se rassemblent les marins du monde entier.",
-            "description": "Au cœur des installations portuaires, la Maison du Marin est un lieu chaleureux conçu pour accueillir tous les marins en escale au Port de Québec."
+            "description": "Au cœur des installations portuaires, la Maison du Marin est un lieu chaleureux conçu pour accueillir tous les marins en escale au Port de Québec.",
+            "ogImageAlt": "Logo de la Maison du Marin Québec"
         }
     },
     "en": {
         "seo": {
             "orgName": "Québec Seamen's Club",
             "title": "Québec Seamen's Club — Where seafarers from around the world come together.",
-            "description": "At the heart of the port facilities, the Seamen's Club is a warm place built to welcome every sailor calling at the Port of Québec."
+            "description": "At the heart of the port facilities, the Seamen's Club is a warm place built to welcome every sailor calling at the Port of Québec.",
+            "ogImageAlt": "Québec Seamen's Club logo"
         }
     }
 }
