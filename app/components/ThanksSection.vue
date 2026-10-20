@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 </script>
 
 <template>
@@ -14,6 +14,12 @@ const { t } = useI18n()
                     <template #cpbsl>
                         <strong>{{ t('thanks.cpbsl') }}</strong>
                     </template>
+                    <template #qcescf>
+                        <strong>{{ t('thanks.qcescf') }}</strong>
+                    </template>
+                    <template #issc>
+                        <strong>{{ t('thanks.issc') }}</strong>
+                    </template>
                 </i18n-t>
             </div>
             <div class="thanks__logos">
@@ -26,6 +32,16 @@ const { t } = useI18n()
                     src="/images/port-quebec.svg"
                     alt="Port de Québec"
                     class="thanks__logo thanks__logo--port"
+                />
+                <img
+                    :src="`/images/qcescf-${locale === 'en' ? 'en' : 'fr'}.png`"
+                    :alt="t('thanks.qcescf')"
+                    class="thanks__logo thanks__logo--qcescf"
+                />
+                <img
+                    src="/images/issc.png"
+                    alt="International Sailors' Society Canada"
+                    class="thanks__logo thanks__logo--issc"
                 />
             </div>
         </div>
@@ -94,6 +110,16 @@ const { t } = useI18n()
     width: 96px;
     height: auto;
 }
+
+.thanks__logo--qcescf {
+    width: 160px;
+    height: auto;
+}
+
+.thanks__logo--issc {
+    width: 240px;
+    height: auto;
+}
 </style>
 
 <i18n lang="json">
@@ -101,17 +127,21 @@ const { t } = useI18n()
     "fr": {
         "thanks": {
             "label": "Remerciements",
-            "text": "Merci au {port} et à la {cpbsl} pour leur soutien fidèle à la Maison du Marin.",
+            "text": "Merci au {port}, à la {cpbsl}, à la {qcescf} et à l'{issc} pour leur soutien fidèle à la Maison du Marin.",
             "port": "Port de Québec",
-            "cpbsl": "Corporation des pilotes du Bas Saint-Laurent"
+            "cpbsl": "Corporation des pilotes du Bas Saint-Laurent",
+            "qcescf": "Fondation de la communauté d'expression anglaise de Québec",
+            "issc": "International Sailors' Society Canada"
         }
     },
     "en": {
         "thanks": {
             "label": "With thanks",
-            "text": "Our thanks to the {port} and the {cpbsl} for their steadfast support of the Seamen's Club.",
+            "text": "Our thanks to the {port}, the {cpbsl}, the {qcescf} and {issc} for their steadfast support of the Seamen's Club.",
             "port": "Port of Québec",
-            "cpbsl": "Corporation des pilotes du Bas Saint-Laurent"
+            "cpbsl": "Corporation des pilotes du Bas Saint-Laurent",
+            "qcescf": "Quebec City English-Speaking Community Foundation",
+            "issc": "International Sailors' Society Canada"
         }
     }
 }
