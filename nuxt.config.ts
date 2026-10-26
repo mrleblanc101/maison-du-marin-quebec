@@ -69,4 +69,10 @@ export default defineNuxtConfig({
             redirectOn: 'root',
         },
     },
+
+    vite: {
+        optimizeDeps: {
+            include: ['swiper/modules', 'swiper/vue'],
+        },
+    },
 })
