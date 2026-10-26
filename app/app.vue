@@ -7,7 +7,7 @@ const SITE_URL = import.meta.dev
 const OG_IMAGE = `${SITE_URL}/images/og-logo.jpg`
 
 // Auto-generated <html lang>, canonical link, and hreflang alternates for
-// every configured locale (fr at `/`, en at `/en`, per i18n.baseUrl above).
+// every configured locale (fr at `/fr`, en at `/en`, per i18n.baseUrl above).
 const localeHead = useLocaleHead({ lang: true, seo: true })
 useHead(localeHead)
 
